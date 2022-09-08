@@ -2,3 +2,4 @@ pycaret
 streamlit
 pandas
 numpy
+Pillow

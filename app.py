@@ -18,7 +18,9 @@ def predict(model, input_df):
     return predictions
 
 #def run():
-
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
     
 image = Image.open('logo.png')
 image_hospital = Image.open('hospital.jpg')
@@ -68,6 +70,15 @@ if add_selectbox == 'Batch':
         data = pd.read_csv(file_upload)
         predictions = predict_model(estimator=model,data=data)
         st.write(predictions)
-
+        
+        #Download data
+        csv = convert_df(predictions)    
+        
+        st.download_button(
+         label="Download data as CSV",
+         data=csv,
+         file_name='lau_test_df.csv',
+         mime='text/csv'
+        )
 #if __name__ == '__main__':
 #    run()

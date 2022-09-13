@@ -29,7 +29,7 @@ jobs:
 
       - name: Resolve issue on libgomp1
         #run: sudo apt-get update && apt-get install -y libgomp1
-        run: sudo apt-get install -y libgomp1
+        run: sudo apt-get install libgomp1
 
       - name: Install dependencies
         run: pip install -r requirements.txt

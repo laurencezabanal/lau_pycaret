@@ -29,7 +29,9 @@ jobs:
 
       - name: Resolve issue on libgomp1
         #run: sudo apt-get update && apt-get install -y libgomp1
-        run: sudo apt-get install libgomp1
+        #https://www.dominodatalab.com/blog/pycaret-2-2-efficient-pipelines-for-model-development
+        run: sudo apt-get purge python-numpy -y && sudo apt-get autoremove --purge python-numpy -y && sudo pip uninstall numpy -y && sudo pip install numpy==1.17 && sudo pip install pycaret==2.2.2 && sudo pip install shap==0.36.0
+        #run: sudo apt-get install libgomp1
 
       - name: Install dependencies
         run: pip install -r requirements.txt

@@ -4,7 +4,8 @@ Created on Wed Jul  6 17:22:11 2022
 
 @author: john.l.a.zabanal
 """
-from pycaret.regression import load_model, predict_model
+#from pycaret.regression import load_model, predict_model
+from pycaret.regression import *
 import streamlit as st
 import pandas as pd
 import numpy as np

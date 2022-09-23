@@ -28,7 +28,10 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install --upgrade setuptools
+          pip install -r requirements.txt
+          pip install pycaret --no-warn-script-location
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       

@@ -1,6 +1,6 @@
-mlflow
-streamlit
 pandas
 numpy
+streamlit
 Pillow
 pycaret
+mlflow
